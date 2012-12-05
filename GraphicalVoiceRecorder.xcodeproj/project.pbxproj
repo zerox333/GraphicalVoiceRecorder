@@ -1,0 +1,315 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DF891BA5166F599F00AD6A76 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF891BA4166F599F00AD6A76 /* UIKit.framework */; };
+		DF891BA7166F599F00AD6A76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF891BA6166F599F00AD6A76 /* Foundation.framework */; };
+		DF891BA9166F599F00AD6A76 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF891BA8166F599F00AD6A76 /* CoreGraphics.framework */; };
+		DF891BAF166F599F00AD6A76 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF891BAD166F599F00AD6A76 /* InfoPlist.strings */; };
+		DF891BB1166F59A000AD6A76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DF891BB0166F59A000AD6A76 /* main.m */; };
+		DF891BB5166F59A000AD6A76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DF891BB4166F59A000AD6A76 /* AppDelegate.m */; };
+		DF891BB7166F59A000AD6A76 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DF891BB6166F59A000AD6A76 /* Default.png */; };
+		DF891BB9166F59A000AD6A76 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF891BB8166F59A000AD6A76 /* Default@2x.png */; };
+		DF891BBB166F59A000AD6A76 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF891BBA166F59A000AD6A76 /* Default-568h@2x.png */; };
+		DF891BBE166F59A000AD6A76 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF891BBD166F59A000AD6A76 /* ViewController.m */; };
+		DF891BC1166F59A000AD6A76 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF891BBF166F59A000AD6A76 /* ViewController.xib */; };
+		DF891BCB166F59CA00AD6A76 /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = DF891BC9166F59CA00AD6A76 /* Line.m */; };
+		DF891BCC166F59CA00AD6A76 /* LineView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF891BCA166F59CA00AD6A76 /* LineView.m */; };
+		DF891BCE166F5E5700AD6A76 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF891BCD166F5E5700AD6A76 /* AVFoundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DF891BA0166F599F00AD6A76 /* GraphicalVoiceRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraphicalVoiceRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF891BA4166F599F00AD6A76 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DF891BA6166F599F00AD6A76 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DF891BA8166F599F00AD6A76 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DF891BAC166F599F00AD6A76 /* GraphicalVoiceRecorder-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GraphicalVoiceRecorder-Info.plist"; sourceTree = "<group>"; };
+		DF891BAE166F599F00AD6A76 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DF891BB0166F59A000AD6A76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DF891BB2166F59A000AD6A76 /* GraphicalVoiceRecorder-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GraphicalVoiceRecorder-Prefix.pch"; sourceTree = "<group>"; };
+		DF891BB3166F59A000AD6A76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DF891BB4166F59A000AD6A76 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DF891BB6166F59A000AD6A76 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		DF891BB8166F59A000AD6A76 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		DF891BBA166F59A000AD6A76 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		DF891BBC166F59A000AD6A76 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DF891BBD166F59A000AD6A76 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DF891BC0166F59A000AD6A76 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		DF891BC7166F59CA00AD6A76 /* LineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineView.h; sourceTree = "<group>"; };
+		DF891BC8166F59CA00AD6A76 /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
+		DF891BC9166F59CA00AD6A76 /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
+		DF891BCA166F59CA00AD6A76 /* LineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineView.m; sourceTree = "<group>"; };
+		DF891BCD166F5E5700AD6A76 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DF891B9D166F599F00AD6A76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF891BCE166F5E5700AD6A76 /* AVFoundation.framework in Frameworks */,
+				DF891BA5166F599F00AD6A76 /* UIKit.framework in Frameworks */,
+				DF891BA7166F599F00AD6A76 /* Foundation.framework in Frameworks */,
+				DF891BA9166F599F00AD6A76 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DF891B95166F599E00AD6A76 = {
+			isa = PBXGroup;
+			children = (
+				DF891BAA166F599F00AD6A76 /* GraphicalVoiceRecorder */,
+				DF891BA3166F599F00AD6A76 /* Frameworks */,
+				DF891BA1166F599F00AD6A76 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DF891BA1166F599F00AD6A76 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DF891BA0166F599F00AD6A76 /* GraphicalVoiceRecorder.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DF891BA3166F599F00AD6A76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF891BCD166F5E5700AD6A76 /* AVFoundation.framework */,
+				DF891BA4166F599F00AD6A76 /* UIKit.framework */,
+				DF891BA6166F599F00AD6A76 /* Foundation.framework */,
+				DF891BA8166F599F00AD6A76 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DF891BAA166F599F00AD6A76 /* GraphicalVoiceRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				DF891BB3166F59A000AD6A76 /* AppDelegate.h */,
+				DF891BB4166F59A000AD6A76 /* AppDelegate.m */,
+				DF891BBC166F59A000AD6A76 /* ViewController.h */,
+				DF891BBD166F59A000AD6A76 /* ViewController.m */,
+				DF891BC8166F59CA00AD6A76 /* Line.h */,
+				DF891BC9166F59CA00AD6A76 /* Line.m */,
+				DF891BC7166F59CA00AD6A76 /* LineView.h */,
+				DF891BCA166F59CA00AD6A76 /* LineView.m */,
+				DF891BBF166F59A000AD6A76 /* ViewController.xib */,
+				DF891BAB166F599F00AD6A76 /* Supporting Files */,
+			);
+			path = GraphicalVoiceRecorder;
+			sourceTree = "<group>";
+		};
+		DF891BAB166F599F00AD6A76 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DF891BAC166F599F00AD6A76 /* GraphicalVoiceRecorder-Info.plist */,
+				DF891BAD166F599F00AD6A76 /* InfoPlist.strings */,
+				DF891BB0166F59A000AD6A76 /* main.m */,
+				DF891BB2166F59A000AD6A76 /* GraphicalVoiceRecorder-Prefix.pch */,
+				DF891BB6166F59A000AD6A76 /* Default.png */,
+				DF891BB8166F59A000AD6A76 /* Default@2x.png */,
+				DF891BBA166F59A000AD6A76 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DF891B9F166F599F00AD6A76 /* GraphicalVoiceRecorder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF891BC4166F59A000AD6A76 /* Build configuration list for PBXNativeTarget "GraphicalVoiceRecorder" */;
+			buildPhases = (
+				DF891B9C166F599F00AD6A76 /* Sources */,
+				DF891B9D166F599F00AD6A76 /* Frameworks */,
+				DF891B9E166F599F00AD6A76 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GraphicalVoiceRecorder;
+			productName = GraphicalVoiceRecorder;
+			productReference = DF891BA0166F599F00AD6A76 /* GraphicalVoiceRecorder.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DF891B97166F599E00AD6A76 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = zerox;
+			};
+			buildConfigurationList = DF891B9A166F599E00AD6A76 /* Build configuration list for PBXProject "GraphicalVoiceRecorder" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DF891B95166F599E00AD6A76;
+			productRefGroup = DF891BA1166F599F00AD6A76 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DF891B9F166F599F00AD6A76 /* GraphicalVoiceRecorder */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DF891B9E166F599F00AD6A76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF891BAF166F599F00AD6A76 /* InfoPlist.strings in Resources */,
+				DF891BB7166F59A000AD6A76 /* Default.png in Resources */,
+				DF891BB9166F59A000AD6A76 /* Default@2x.png in Resources */,
+				DF891BBB166F59A000AD6A76 /* Default-568h@2x.png in Resources */,
+				DF891BC1166F59A000AD6A76 /* ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DF891B9C166F599F00AD6A76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF891BB1166F59A000AD6A76 /* main.m in Sources */,
+				DF891BB5166F59A000AD6A76 /* AppDelegate.m in Sources */,
+				DF891BBE166F59A000AD6A76 /* ViewController.m in Sources */,
+				DF891BCB166F59CA00AD6A76 /* Line.m in Sources */,
+				DF891BCC166F59CA00AD6A76 /* LineView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DF891BAD166F599F00AD6A76 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DF891BAE166F599F00AD6A76 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DF891BBF166F59A000AD6A76 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DF891BC0166F59A000AD6A76 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DF891BC2166F59A000AD6A76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DF891BC3166F59A000AD6A76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DF891BC5166F59A000AD6A76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GraphicalVoiceRecorder/GraphicalVoiceRecorder-Prefix.pch";
+				INFOPLIST_FILE = "GraphicalVoiceRecorder/GraphicalVoiceRecorder-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DF891BC6166F59A000AD6A76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GraphicalVoiceRecorder/GraphicalVoiceRecorder-Prefix.pch";
+				INFOPLIST_FILE = "GraphicalVoiceRecorder/GraphicalVoiceRecorder-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DF891B9A166F599E00AD6A76 /* Build configuration list for PBXProject "GraphicalVoiceRecorder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF891BC2166F59A000AD6A76 /* Debug */,
+				DF891BC3166F59A000AD6A76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF891BC4166F59A000AD6A76 /* Build configuration list for PBXNativeTarget "GraphicalVoiceRecorder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF891BC5166F59A000AD6A76 /* Debug */,
+				DF891BC6166F59A000AD6A76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DF891B97166F599E00AD6A76 /* Project object */;
+}
