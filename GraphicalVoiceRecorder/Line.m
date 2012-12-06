@@ -10,16 +10,16 @@
 
 @implementation Line
 
-@synthesize from_point = _from_point;
-@synthesize to_point = _to_point;
+@synthesize fromPoint = _fromPoint;
+@synthesize toPoint = _toPoint;
 @synthesize color = _color;
 
 - (id) init {
     self = [super init];
     
-    _from_point = CGPointMake(0.0, 0.0);
-    _to_point = CGPointMake(0.0, 0.0);
-    _color = [UIColor blueColor].CGColor; // default color
+    _fromPoint = CGPointMake(0.0, 0.0);
+    _toPoint = CGPointMake(0.0, 0.0);
+    _color = [UIColor blueColor].CGColor;
     
     return self;
 }

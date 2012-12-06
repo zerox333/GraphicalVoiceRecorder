@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface Line : NSObject {
-  CGPoint _from_point;
-  CGPoint _to_point;
+  CGPoint _fromPoint;
+  CGPoint _toPoint;
   CGColorRef _color;
 }
 
-@property(nonatomic, assign) CGPoint from_point;
-@property(nonatomic, assign) CGPoint to_point;
+@property(nonatomic, assign) CGPoint fromPoint;
+@property(nonatomic, assign) CGPoint toPoint;
 @property(nonatomic, assign) CGColorRef color;
 
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF7A9DBD16709F2800C7D5FA /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DF7A9DBB16709F2800C7D5FA /* icon.png */; };
+		DF7A9DBE16709F2800C7D5FA /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF7A9DBC16709F2800C7D5FA /* icon@2x.png */; };
 		DF891BA5166F599F00AD6A76 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF891BA4166F599F00AD6A76 /* UIKit.framework */; };
 		DF891BA7166F599F00AD6A76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF891BA6166F599F00AD6A76 /* Foundation.framework */; };
 		DF891BA9166F599F00AD6A76 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF891BA8166F599F00AD6A76 /* CoreGraphics.framework */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF7A9DBB16709F2800C7D5FA /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		DF7A9DBC16709F2800C7D5FA /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		DF891BA0166F599F00AD6A76 /* GraphicalVoiceRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraphicalVoiceRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF891BA4166F599F00AD6A76 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DF891BA6166F599F00AD6A76 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -110,6 +114,8 @@
 		DF891BAB166F599F00AD6A76 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DF7A9DBB16709F2800C7D5FA /* icon.png */,
+				DF7A9DBC16709F2800C7D5FA /* icon@2x.png */,
 				DF891BAC166F599F00AD6A76 /* GraphicalVoiceRecorder-Info.plist */,
 				DF891BAD166F599F00AD6A76 /* InfoPlist.strings */,
 				DF891BB0166F59A000AD6A76 /* main.m */,
@@ -177,6 +183,8 @@
 				DF891BB9166F59A000AD6A76 /* Default@2x.png in Resources */,
 				DF891BBB166F59A000AD6A76 /* Default-568h@2x.png in Resources */,
 				DF891BC1166F59A000AD6A76 /* ViewController.xib in Resources */,
+				DF7A9DBD16709F2800C7D5FA /* icon.png in Resources */,
+				DF7A9DBE16709F2800C7D5FA /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,7 +17,7 @@
     self = [super initWithFrame:frame];
     if (self)
     {
-        startX = 0;
+        _originX = 0;
     }
     return self;
 }
@@ -29,9 +29,9 @@
         _lines = [[NSMutableArray alloc] init];
     }
     
-    startX -= 2;
+    _originX -= 2;
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextTranslateCTM(context, startX, 0);
+    CGContextTranslateCTM(context, _originX, 0);
     
     for(Line *line in _lines)
     {
@@ -41,11 +41,13 @@
 
 - (void)drawLine:(Line *)line inContext:(CGContextRef)context
 {
-    line.color = [UIColor colorWithRed:1.0 green:1.0 blue:line.to_point.y/255.0 alpha:1].CGColor;
+    // 根据Y值改变颜色
+    line.color = [UIColor colorWithRed:1.0 green:1.0 blue:line.toPoint.y/255.0 alpha:1].CGColor;
+    
     CGContextSetLineWidth(context, 2.0);
     CGContextSetStrokeColorWithColor(context, line.color);
-    CGContextMoveToPoint(context, line.from_point.x, line.from_point.y);
-    CGContextAddLineToPoint(context, line.to_point.x, line.to_point.y);
+    CGContextMoveToPoint(context, line.fromPoint.x, line.fromPoint.y);
+    CGContextAddLineToPoint(context, line.toPoint.x, line.toPoint.y);
     CGContextStrokePath(context);
 }
 

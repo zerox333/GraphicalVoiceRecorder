@@ -13,14 +13,10 @@
 
 @interface ViewController : UIViewController
 {
-    CGPoint _last_touch_point;
-    AVAudioRecorder *recorder;
-    CGFloat xValue;
+    CGPoint _lastPoint;  // 全局变量，记录上一点
+    CGFloat _currentX;           // 当前横坐标
+    LineView *_lineView;        
+    AVAudioRecorder *_recorder;  // 录音
 }
-
-@property(nonatomic, retain) LineView *lineView;
-@property(nonatomic, retain) AVAudioRecorder *recorder;
-
-- (void)addNewLineFromPoint:(CGPoint)from_point toPoint:(CGPoint)to_point offSet:(CGFloat)offSet;
 
 @end

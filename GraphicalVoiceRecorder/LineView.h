@@ -10,8 +10,8 @@
 
 @interface LineView : UIView
 {
-    NSMutableArray *lines;
-    CGFloat startX;
+    NSMutableArray *_lines;
+    CGFloat _originX;
 }
 
 @property (strong, nonatomic) NSMutableArray *lines;

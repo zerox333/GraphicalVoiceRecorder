@@ -8,21 +8,69 @@
 
 #import "ViewController.h"
 
+@interface ViewController(private)
+
+// 录音初始化
+- (void)initRecording;
+// 加入新的点
+- (void)addPointAt:(CGPoint)point;
+// 加入新的线
+- (void)addNewLineFromPoint:(CGPoint)fromPoint toPoint:(CGPoint)toPoint;
+// 更新分贝信息
+- (void)updateMeters;
+
+@end
+
 @implementation ViewController
 
-@synthesize lineView;
-@synthesize recorder;
-
+// 视图已加载
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	_last_touch_point = CGPointMake(-1.0, -1.0);
     
-    lineView = [[LineView alloc] initWithFrame:self.view.bounds];
-    lineView.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
-    [self.view addSubview:lineView];
+    // 点赋初值
+	_lastPoint = CGPointMake(-1.0, -1.0);
     
-    // Recording settings
+    // 实例化波形视图
+    _lineView = [[LineView alloc] initWithFrame:self.view.bounds];
+    _lineView.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
+    self.view = _lineView;
+    
+    // 初始化录音
+    [self initRecording];
+    
+    // 每0.1秒更新一次分贝信息
+    [NSTimer scheduledTimerWithTimeInterval:0.1f
+                                     target:self
+                                   selector:@selector(updateMeters)
+                                   userInfo:nil
+                                    repeats:YES];
+}
+
+// 视图已显示
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    // 初始直线
+    [self addPointAt:CGPointMake(0, 360)];
+    [self addPointAt:CGPointMake(320, 360)];
+    _currentX = 320;
+}
+
+// 对象销毁，释放内存
+- (void)dealloc
+{
+    [_lineView release];
+    [_recorder release];
+    [super dealloc];
+}
+
+#pragma mark - Recording
+
+- (void)initRecording
+{
+    // 录音设置
 	NSMutableDictionary *settings = [NSMutableDictionary dictionary];
 	[settings setValue: [NSNumber numberWithInt:kAudioFormatLinearPCM] forKey:AVFormatIDKey];
 	[settings setValue: [NSNumber numberWithFloat:8000.0] forKey:AVSampleRateKey];
@@ -31,109 +79,82 @@
 	[settings setValue: [NSNumber numberWithBool:NO] forKey:AVLinearPCMIsBigEndianKey];
 	[settings setValue: [NSNumber numberWithBool:NO] forKey:AVLinearPCMIsFloatKey];
     
-    // File URL
+    // 录音文件URL（存储于沙盒下tmp文件夹中）
     NSString *documentDirectoryPath = NSTemporaryDirectory();
 	NSString *createMyrecord = [documentDirectoryPath stringByAppendingFormat:@"myrecord"];
 	NSURL *url = [NSURL fileURLWithPath:createMyrecord];
 	
-	// Create recorder
+	// 实例化Recorder
     NSError *error = nil;
-	recorder = [[AVAudioRecorder alloc] initWithURL:url settings:settings error:&error];
-    if (error)
+	_recorder = [[AVAudioRecorder alloc] initWithURL:url settings:settings error:&error];
+    if (error) // 实例化失败
 	{
 		NSLog(@"Error: %@", [error localizedDescription]);
+        return;
 	}
-    else
+    else // 实例化成功
     {
-        recorder.meteringEnabled = YES;
+        /* turns level metering on. default is off. */
+        _recorder.meteringEnabled = YES;
     }
     
     //判断是否准备录音
-	if (![recorder prepareToRecord])
+	if (![_recorder prepareToRecord])
 	{
 		NSLog(@"Error: Prepare to record failed");
+        return;
 	}
+    
 	//录音失败删除创建的文件
-	if (![recorder record])
+	if (![_recorder record])
 	{
 		NSLog(@"Error: Record failed");
 		//删除文件
 		NSError *error;
-		if (![[NSFileManager defaultManager] removeItemAtPath:[recorder.url path] error:&error])
+		if (![[NSFileManager defaultManager] removeItemAtPath:[_recorder.url path] error:&error])
+        {
 			NSLog(@"Error: %@", [error localizedDescription]);
+        }
+        return;
 	}
-    
-    [NSTimer scheduledTimerWithTimeInterval:0.1f target:self selector:@selector(updateMeters) userInfo:nil repeats:YES];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [self addPointAt:CGPointMake(0, 360)];
-    [self addPointAt:CGPointMake(320, 360)];
-    xValue = 320;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
-- (void)dealloc
-{
-    [lineView release];
-    [recorder release];
-    [super dealloc];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
-{
-    return YES;
-}
-
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
-{
-    lineView.frame = self.view.bounds;
-}
-
-- (void)addNewLineFromPoint:(CGPoint)from_point toPoint:(CGPoint)to_point offSet:(CGFloat)offSet
-{
-    Line *new_line = [[Line alloc] init];
-    new_line.from_point = from_point;
-    new_line.to_point = to_point;
-    for (Line *line in [lineView lines])
-    {
-        line.from_point = CGPointMake(line.from_point.x - offSet, line.from_point.y);
-        line.to_point = CGPointMake(line.to_point.x - offSet, line.to_point.y);
-    }
-    [[lineView lines] addObject:new_line];
-}
+#pragma mark - Drawing
 
 - (void)addPointAt:(CGPoint)point
 {
-    // first time
-    if(_last_touch_point.x < 0)
+    // 初始化起始点（至少两点才可开始画线）
+    if(_lastPoint.x < 0)
     {
-        _last_touch_point = point; //record the initial point, nothing to draw the first time
+        _lastPoint = point; // 初始化起始点，不画线
     }
     else
     {
-        [self addNewLineFromPoint:_last_touch_point toPoint:point offSet:0];
-        [lineView setNeedsDisplay]; //redraw the screen
-        _last_touch_point = point; //now get ready for the next touch
+        [self addNewLineFromPoint:_lastPoint toPoint:point];
+        [_lineView setNeedsDisplay]; // 重绘波形图
+        _lastPoint = point; // _lastPoint赋新值
     }
+}
+
+- (void)addNewLineFromPoint:(CGPoint)fromPoint toPoint:(CGPoint)toPoint
+{
+    // 实例化线条并加入数组
+    Line *newLine = [[Line alloc] init];
+    newLine.fromPoint = fromPoint;
+    newLine.toPoint = toPoint;
+    [[_lineView lines] addObject:newLine];
+    [newLine release];
 }
 
 - (void)updateMeters
 {
-    [recorder updateMeters];
-    float avg = [recorder averagePowerForChannel:0];//平均分贝功率
-    //	float peak = [self.m_recorder peakPowerForChannel:0];//录音分贝的峰值
-	NSLog(@"avgInt %f",avg);
+    [_recorder updateMeters];
+    float avg = [_recorder averagePowerForChannel:0];//平均分贝功率（分贝数越大值越小）
     
-    avg *= 4;
+    avg *= 4; // 4倍值，便于显示
     
-    xValue += 2;
-	CGPoint point = CGPointMake(xValue, 100 - avg);
+    _currentX += 2;
+	CGPoint point = CGPointMake(_currentX, 100 - avg);
     [self addPointAt:point];
 }
 
