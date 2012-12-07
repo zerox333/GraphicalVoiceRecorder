@@ -79,10 +79,14 @@
 	[settings setValue: [NSNumber numberWithBool:NO] forKey:AVLinearPCMIsBigEndianKey];
 	[settings setValue: [NSNumber numberWithBool:NO] forKey:AVLinearPCMIsFloatKey];
     
-    // 录音文件URL（存储于沙盒下tmp文件夹中）
+    // 录音文件URL（存储于沙盒下tmp目录中）
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyyMMddHHmmss"];
+    NSString *dateString = [formatter stringFromDate:[NSDate date]];
+    [formatter release];
     NSString *documentDirectoryPath = NSTemporaryDirectory();
-	NSString *createMyrecord = [documentDirectoryPath stringByAppendingFormat:@"myrecord"];
-	NSURL *url = [NSURL fileURLWithPath:createMyrecord];
+	NSString *recordPath = [documentDirectoryPath stringByAppendingFormat:@"%@.wav",dateString];
+	NSURL *url = [NSURL fileURLWithPath:recordPath];
 	
 	// 实例化Recorder
     NSError *error = nil;
