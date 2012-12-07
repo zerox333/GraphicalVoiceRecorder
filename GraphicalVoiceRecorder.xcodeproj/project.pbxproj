@@ -275,10 +275,12 @@
 		DF891BC5166F59A000AD6A76 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GraphicalVoiceRecorder/GraphicalVoiceRecorder-Prefix.pch";
 				INFOPLIST_FILE = "GraphicalVoiceRecorder/GraphicalVoiceRecorder-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -287,10 +289,12 @@
 		DF891BC6166F59A000AD6A76 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GraphicalVoiceRecorder/GraphicalVoiceRecorder-Prefix.pch";
 				INFOPLIST_FILE = "GraphicalVoiceRecorder/GraphicalVoiceRecorder-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

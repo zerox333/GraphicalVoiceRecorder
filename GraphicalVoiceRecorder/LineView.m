@@ -8,6 +8,12 @@
 #import "LineView.h"
 #import "Line.h"
 
+@interface LineView (private)
+
+- (void)drawLine:(Line *)line inContext:(CGContextRef)context;
+
+@end
+
 @implementation LineView
 
 @synthesize lines = _lines;

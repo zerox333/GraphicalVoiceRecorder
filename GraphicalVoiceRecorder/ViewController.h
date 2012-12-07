@@ -13,10 +13,11 @@
 
 @interface ViewController : UIViewController
 {
-    CGPoint _lastPoint;  // 全局变量，记录上一点
-    CGFloat _currentX;           // 当前横坐标
-    LineView *_lineView;        
-    AVAudioRecorder *_recorder;  // 录音
+    CGPoint _lastPoint;             // 全局变量，记录上一点
+    CGFloat _currentX;              // 当前横坐标
+    LineView *_lineView;            // 线条视图
+    AVAudioRecorder *_recorder;     // 录音
+    NSTimer *_timer;                // 定时器
 }
 
 @end

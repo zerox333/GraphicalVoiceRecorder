@@ -40,7 +40,7 @@
     [self initRecording];
     
     // 每0.1秒更新一次分贝信息
-    [NSTimer scheduledTimerWithTimeInterval:0.1f
+    _timer = [NSTimer scheduledTimerWithTimeInterval:0.1f
                                      target:self
                                    selector:@selector(updateMeters)
                                    userInfo:nil
@@ -62,6 +62,9 @@
 - (void)dealloc
 {
     [_lineView release];
+    [_timer invalidate];
+    [_timer release];
+    [_recorder stop];
     [_recorder release];
     [super dealloc];
 }
